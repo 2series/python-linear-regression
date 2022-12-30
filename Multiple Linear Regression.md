@@ -1,6 +1,5 @@
 # Multiple Linear Regression Polynomial Regression
 
-
 1. Import the necessary libraries (e.g. NumPy, Matplotlib, Scikit-learn)
 2. Load the data and split it into training and test sets
 3. Preprocess the data as needed 
@@ -10,7 +9,6 @@
 4. Fit the model using either multiple linear regression or polynomial regression
 
 For multiple linear regression, you can use Scikit-learn's LinearRegression class:
-
 ```
 from sklearn.linear_model import LinearRegression
 
@@ -28,7 +26,6 @@ print("Mean Squared Error:", mse)
 
 For polynomial regression, you can use Scikit-learn's PolynomialFeatures transformer to 
 create polynomial features, and then use LinearRegression to fit the model:
-
 ```
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
@@ -60,7 +57,11 @@ depending on the specific problem you are trying to solve, such as:
 In multiple linear regression, it is important to choose a subset of features that are most relevant 
 to the target variable
 
-You can use techniques such as backward elimination, forward selection, or ridge regression 
+You can use techniques such as:
+- backward elimination, 
+- forward selection, or 
+- ridge regression 
+
 to select the most important features
 
 ### Feature scaling: 
