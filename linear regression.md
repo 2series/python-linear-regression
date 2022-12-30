@@ -13,7 +13,7 @@ The cost function for simple linear regression is given by:
 
 where h(x) is the predicted value, 
 y is the true value, and 
-m is the number of rows in the dataset
+m is the number of examples in the dataset
 
 4. Initialize the model parameters (i.e. the slope and intercept)
 5. Implement the gradient descent algorithm to optimize the cost function and find the optimal model parameters
