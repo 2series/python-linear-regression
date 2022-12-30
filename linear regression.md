@@ -3,9 +3,9 @@
 
 >Here is a step-by-step guide to implementing simple linear regression with a cost function in Python:
 
-Import the necessary libraries (e.g. NumPy, Matplotlib)
-Load the data and split it into training and test sets
-Define the cost function, which measures the difference between the predicted values and the true values
+1. Import the necessary libraries (e.g. NumPy, Matplotlib)
+2. Load the data and split it into training and test sets
+3. Define the cost function, which measures the difference between the predicted values and the true values
 
 The cost function for simple linear regression is given by:
 
@@ -15,13 +15,16 @@ where h(x) is the predicted value,
 y is the true value, and 
 m is the number of rows in the dataset
 
-Initialize the model parameters (i.e. the slope and intercept)
-Implement the gradient descent algorithm to optimize the cost function and find the optimal model parameters
-The gradient descent algorithm works by repeatedly updating the model parameters in the direction that minimizes the cost function
-Use the learned model parameters to make predictions on the test set
-Evaluate the model by computing the mean squared error (MSE) between the predicted values and the true values
+4. Initialize the model parameters (i.e. the slope and intercept)
+5. Implement the gradient descent algorithm to optimize the cost function and find the optimal model parameters
 
-Here is some example code that demonstrates how to implement simple linear regression with a cost function in Python:
+*The gradient descent algorithm works by repeatedly updating the model parameters in the direction that minimizes the cost function*
+
+6. Use the learned model parameters to make predictions on the test set
+
+7. Evaluate the model by computing the mean squared error (MSE) between the predicted values and the true values
+
+Here is sample code that demonstrates how to implement simple linear regression with a cost function in Python:
 
 ```
 import numpy as np
@@ -60,9 +63,9 @@ print("Mean Squared Error:", mse)
 
 >Here is a step-by-step guide to implementing ordinary least squares (OLS) for simple linear regression in Python:
 
-Import the necessary libraries (e.g. NumPy, Matplotlib)
-Load the data and split it into training and test sets
-Use the training set to fit the model using OLS 
+1. Import the necessary libraries (e.g. NumPy, Matplotlib)
+2. Load the data and split it into training and test sets
+3. Use the training set to fit the model using OLS 
 
 The OLS solution for simple linear regression is given by:
 
@@ -72,10 +75,10 @@ where theta is the vector of model parameters (i.e. the slope and intercept),
 X is the feature matrix, and 
 y is the target vector
 
-Use the learned model parameters to make predictions on the test set
-Evaluate the model by computing the mean squared error (MSE) between the predicted values and the true values
+4. Use the learned model parameters to make predictions on the test set
+5. Evaluate the model by computing the mean squared error (MSE) between the predicted values and the true values
 
-Here is some example code that demonstrates how to implement OLS for simple linear regression in Python:
+Here is sample code that demonstrates how to implement OLS for simple linear regression in Python:
 
 ```
 import numpy as np
@@ -107,7 +110,7 @@ Other methods include gradient descent and the normal equation
 This is an iterative optimization algorithm that works by repeatedly updating the model parameters 
 in the direction that minimizes the cost function
 
-Here is some example code for implementing gradient descent for simple linear regression in Python:
+Here is sample code for implementing gradient descent for simple linear regression in Python:
 
 ```
 import numpy as np
@@ -149,7 +152,7 @@ This method directly solves for the optimal model parameters using the closed-fo
 
 >theta = (X^T * X)^(-1) * X^T * y
 
-Here is some example code for implementing the normal equation for simple linear regression in Python:
+Here is sample code for implementing the normal equation for simple linear regression in Python:
 
 ```
 import numpy as np
@@ -174,6 +177,7 @@ mse = np.mean((y_pred - y_test)**2)
 print("Mean Squared Error:", mse)
 ```
 
+## Conclusion
 Both **gradient descent** and the normal equation can be used to fit a simple linear regression model, and 
 which one to use depends on the specific situation
 
