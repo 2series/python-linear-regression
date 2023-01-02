@@ -1,1 +1,1 @@
-# python-machine-learning-guide
+# python-linear-regression
