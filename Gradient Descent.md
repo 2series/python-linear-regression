@@ -198,6 +198,99 @@ appends it to the list
 It then calculates the gradient and updates the weights. Finally, it prints the final weights
 
 ### 3. In Neural networks
+The goal is to find the values of the weights that minimize the loss function
+
+The loss function measures the difference between the predicted values and the true values, and 
+is used to train the model to make better predictions
+
+To minimize the loss function using gradient descent, we need to compute the gradient of the loss function 
+with respect to the weights
+
+The gradient is calculated using the backpropagation algorithm, which involves propagating the error backwards 
+through the network and computing the gradients of the loss function with respect to each weight
+
+Here is an example of how to implement gradient descent for a neural network in Python using the PyTorch library:
+```
+import torch
+
+# Set the learning rate
+learning_rate = 0.01
+
+# Set the number of epochs
+n_epochs = 10
+
+# Set the device
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# Convert the data to tensors
+X_train = torch.from_numpy(X_train).float().to(device)
+y_train = torch.from_numpy(y_train).long().to(device)
+X_test = torch.from_numpy(X_test).float().to(device)
+y_test = torch.from_numpy(y_test).long().to(device)
+
+# Define the neural network
+class Net(torch.nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.fc1 = torch.nn.Linear(n_inputs, n_hidden)
+        self.fc2 = torch.nn.Linear(n_hidden, n_classes)
+    
+    def forward(self, x):
+        x = torch.nn.functional.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+# Create the neural network
+net = Net().to(device)
+
+# Define the loss function and optimizer
+criterion = torch.nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(net.parameters(), lr=learning_rate)
+
+# Iterate over the number of epochs
+for epoch in range(n_epochs):
+    # Set the model to training mode
+    net.train()
+    
+    # Zero the gradients
+    optimizer.zero_grad()
+    
+    # Forward pass
+    outputs = net(X_train)
+  
+# Calculate the loss
+loss = criterion(outputs, y_train)
+
+# Backward pass
+loss.backward()
+
+# Update the weights
+optimizer.step()
+
+# Print the loss
+print(f"Epoch {epoch+1}: loss = {loss.item():.4f}")
+
+# Set the model to evaluation mode
+net.eval()
+
+# Make predictions on the test set
+with torch.no_grad():
+    y_pred = net(X_test)
+
+# Calculate the accuracy
+accuracy = (y_pred.argmax(dim=1) == y_test).float().mean().item()
+
+# Print the accuracy
+print(f"Accuracy: {accuracy:.2f}")
+``` 
+The code calculates the loss using the cross-entropy loss function,
+performs a backward pass to compute the gradients, updates the weights using the optimizer, and 
+prints the loss
+
+It then sets the model to evaluation mode, makes predictions on the test set, calculates the accuracy, and prints the accuracy
+
+
+
 
 
 
